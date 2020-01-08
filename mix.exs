@@ -1,28 +1,34 @@
 defmodule Tdx.MixProject do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [
       app: :tdx,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "Tdx",
+      description: "TDS driver for Elixir",
+      source_url: "https://github.com/N-0x90/tdx",
     ]
   end
 
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Tdx.App, []},
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:db_connection, "~> 2.1"},
+      {:decimal, "~> 1.6"},
     ]
   end
 end
