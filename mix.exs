@@ -11,7 +11,7 @@ defmodule Tdx.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Tdx",
-      description: "TDS driver for Elixir",
+      description: "TDS driver for Elixir - SSH",
       source_url: "https://github.com/N-0x90/tdx",
     ]
   end
